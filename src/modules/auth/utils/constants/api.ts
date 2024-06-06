@@ -1,0 +1,1 @@
+export const AUTH_API_PREFIX_URL: string = import.meta.env.VITE_AUTH_API_PREFIX_URL; 
