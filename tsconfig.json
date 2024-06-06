@@ -23,9 +23,10 @@
     /* Alias */
     "baseUrl": ".",
     "paths": {
-      "@auth/*": ["src/auth/*"],
-      "@core/*": ["src/core/*"],
-      "@utils/*": ["src/utils/*"]
+      "@auth/*": ["src/modules/auth/*"],
+      "@core/*": ["src/modules/core/*"],
+      "@utils/*": ["src/utils/*"],
+      "@pages/*": ["src/pages/*"],
     }
   },
   "include": ["src"],

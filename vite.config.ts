@@ -6,9 +6,10 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@auth': '/src/auth',
-      '@core': '/src/core',
+      '@auth': '/src/modules/auth',
+      '@core': '/src/modules/core',
       '@utils': '/src/utils',
+      '@pages': '/src/pages',
     }
   }
 });
