@@ -17,13 +17,15 @@ export interface UserResponse {
 }
 
 
-export type OptionRandomForm = 'Otro si' | 'Otro no' | string
+export type TipoServicio = 'Otro si' | 'Otro no' | string
+
+export type TipoProceso = 'proceso1' | 'proceso2' | string
 
 export interface RandomFormValues {
-  tipoServicio: OptionRandomForm
+  tipoServicio: TipoServicio
   motivoProceso: string
   desmotivoProceso: string
-  tipoProceso: string
+  tipoProceso: TipoProceso
   motproc1: string
   motproc2: string
 

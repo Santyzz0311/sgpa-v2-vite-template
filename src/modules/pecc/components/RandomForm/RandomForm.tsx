@@ -39,7 +39,6 @@ const RandomForm: React.FC = () => {
             <option value="proceso2">proceso2</option>
           </FormField>
         </FormSection>
-        
         <FormSection>
           <DynamicField inputClassname={styles.input} name="motproc1" condition={(values: RandomFormValues) => values.tipoProceso === 'proceso1'} />
           <DynamicField inputClassname={styles.input} name="motproc1" condition={(values: RandomFormValues) => values.tipoProceso === 'proceso2'} />
