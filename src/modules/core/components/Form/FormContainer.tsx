@@ -1,11 +1,11 @@
-import { Formik, Form, FormikHelpers, FormikValues } from 'formik'
+import { Formik, Form, FormikHelpers, FormikProps, FormikValues } from 'formik'
 import * as Yup from 'yup'
 
 interface FormContainerProps<T extends FormikValues> {
   initialValues: T
   validationSchema: Yup.ObjectSchema<T> | Yup.Schema<T>
   onSubmit: (values: T, formikHelpers: FormikHelpers<T>) => void
-  children: React.ReactNode
+  children: ((formik: FormikProps<T>) => JSX.Element | JSX.Element[]) | JSX.Element | JSX.Element[]
   className?: string
 }
 
@@ -21,11 +21,11 @@ const FormContainer = <T extends FormikValues>({
     validationSchema={validationSchema} 
     onSubmit={(values, formikHelpers) => onSubmit(values, formikHelpers)}
   >
-    <Form
-      className={className}
-    >
-      {children}
-    </Form>
+    {(formik) => (
+      <Form className={className}>
+        {typeof children === 'function' ? children(formik) : children}
+      </Form>
+    )}
   </Formik>
 )
 

@@ -1,19 +1,17 @@
-import { useFormikContext } from 'formik'
 import FormField from './FormField'
 
-interface DynamicFieldProps<T> {
+interface DynamicFieldProps {
   name: string
-  condition: (values: T) => boolean
+  condition: boolean
   type?: string
   as?: 'input' | 'select'
   inputClassname?: string
   errorClassname?: string
 }
 
-const DynamicField = <T,>({ name, condition, type = 'text', as = 'input', inputClassname = '', errorClassname = '' }: DynamicFieldProps<T>) => {
-  const { values } = useFormikContext<T>()
+const DynamicField = ({ name, condition, type = 'text', as = 'input', inputClassname = '', errorClassname = '' }: DynamicFieldProps) => {
 
-  return condition(values) ? <FormField name={name} type={type} as={as} inputClassname={inputClassname} errorClassname={errorClassname} /> : null
+  return condition ? <FormField name={name} type={type} as={as} inputClassname={inputClassname} errorClassname={errorClassname} /> : null
 }
 
 export default DynamicField
