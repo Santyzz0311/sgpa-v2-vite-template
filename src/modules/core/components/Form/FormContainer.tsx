@@ -1,4 +1,29 @@
-import { Formik, Form, FormikHelpers, FormikProps, FormikValues } from 'formik'
+import { Formik, Form, FormikValues } from 'formik'
+
+const FormContainer: React.FC<FormikValues> = ({
+  initialValues,
+  validationSchema,
+  onSubmit,
+  children,
+  className
+}) => (
+  <Formik 
+    initialValues={initialValues} 
+    validationSchema={validationSchema} 
+    onSubmit={(values, formikHelpers) => onSubmit(values, formikHelpers)}
+  >
+    <Form
+      className={className}
+    >
+      {children}
+    </Form>
+  </Formik>
+)
+
+export default FormContainer
+
+/*
+  import { Formik, Form, FormikHelpers, FormikProps, FormikValues } from 'formik'
 import * as Yup from 'yup'
 
 interface FormContainerProps<T extends FormikValues> {
@@ -30,3 +55,5 @@ const FormContainer = <T extends FormikValues>({
 )
 
 export default FormContainer
+
+*/
