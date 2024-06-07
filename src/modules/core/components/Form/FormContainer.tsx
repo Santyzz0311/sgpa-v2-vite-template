@@ -3,7 +3,7 @@ import * as Yup from 'yup'
 
 interface FormContainerProps<T extends FormikValues> {
   initialValues: T
-  validationSchema: Yup.ObjectSchema<T>
+  validationSchema: Yup.ObjectSchema<T> | Yup.Schema<T>
   onSubmit: (values: T, formikHelpers: FormikHelpers<T>) => void
   children: React.ReactNode
   className?: string

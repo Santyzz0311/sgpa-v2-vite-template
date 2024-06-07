@@ -16,6 +16,7 @@ const FormField: React.FC<FormFieldProps> = ({ name, type = 'text', as = 'input'
       type={type} 
       as={as}
       className={inputClassname}
+      placeholder={name}
     >
       {as === 'select' ? children : null}
     </Field>

@@ -1,8 +1,8 @@
+import RandomForm from "@pecc/components/RandomForm/RandomForm"
+
 function Home() {
   return (
-    <div>
-      Home
-    </div>
+    <RandomForm />
   )
 }
 export default Home

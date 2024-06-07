@@ -1,0 +1,42 @@
+.container {
+  height: 100vh;
+  align-items: center;
+  background-color: var(--color-background);
+}
+
+.title {
+  text-align: center;
+}
+
+.formSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+div:empty {
+  display: none;
+}
+
+.selectInput {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  column-span: all;
+}

@@ -1,18 +1,19 @@
-import { FormikValues, useFormikContext } from 'formik'
+import { useFormikContext } from 'formik'
 import FormField from './FormField'
 
-interface DynamicFieldProps<T extends FormikValues> {
+interface DynamicFieldProps<T> {
   name: string
   condition: (values: T) => boolean
-  label: string
   type?: string
   as?: 'input' | 'select'
+  inputClassname?: string
+  errorClassname?: string
 }
 
-const DynamicField: React.FC<DynamicFieldProps<Pick<FormikValues, 'initialValues'>>> = ({ name, condition, label, type = 'text', as = 'input' }) => {
-  const { values } = useFormikContext<Pick<FormikValues, 'initialValues'>>()
+const DynamicField = <T,>({ name, condition, type = 'text', as = 'input', inputClassname = '', errorClassname = '' }: DynamicFieldProps<T>) => {
+  const { values } = useFormikContext<T>()
 
-  return condition(values) ? <FormField name={name} label={label} type={type} as={as} /> : null
+  return condition(values) ? <FormField name={name} type={type} as={as} inputClassname={inputClassname} errorClassname={errorClassname} /> : null
 }
 
 export default DynamicField

@@ -10,6 +10,7 @@ export default defineConfig({
       '@core': '/src/modules/core',
       '@utils': '/src/utils',
       '@pages': '/src/pages',
+      '@pecc': '/src/modules/pecc',
     }
   }
 });
