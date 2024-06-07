@@ -1,8 +1,8 @@
 import { lazy } from "react";
 import { PRIVATE_ROUTES } from "@utils/enums";
-const Home = lazy(() => import("@pages/private/Home"))
 import { Navigate, Route } from "react-router-dom";
 import RoutesWithNotFound from "../RoutesWithNotFound";
+const Home = lazy(() => import("@pages/private/Home"))
 
 export default function PrivateRoutesProvider() {
   return (
