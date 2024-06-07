@@ -8,7 +8,11 @@ export const postUserCredentials = async ({ email, password }: UserCredentials):
       `${import.meta.env.VITE_AUTH_API_PREFIX_URL}/login`,
       { email, password }
     );
-    return response.data;
+    return {
+      token: response.data.token,
+      user: response.data.user,
+      hasBeenFound: true
+    };
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
       if (error.response.status === STATUS_CODE.UNAUTHORIZED) {

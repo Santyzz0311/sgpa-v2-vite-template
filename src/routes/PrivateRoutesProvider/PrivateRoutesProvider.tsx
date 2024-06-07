@@ -9,6 +9,7 @@ export default function PrivateRoutesProvider() {
     <RoutesWithNotFound>
       <Route path='/' element={<Navigate to={PRIVATE_ROUTES.HOME} />} />
       <Route path={PRIVATE_ROUTES.HOME} element={<Home />} />
+      <Route path={PRIVATE_ROUTES.PROFILE} element={<>Profile</>} />
     </RoutesWithNotFound>
   )
 }

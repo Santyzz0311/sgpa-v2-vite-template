@@ -6,5 +6,6 @@ export enum PUBLIC_ROUTES {
 
 export enum PRIVATE_ROUTES {
   PRIVATE = 'mainsystem',
-  HOME = 'home'
+  HOME = 'home',
+  PROFILE = 'profile',
 }

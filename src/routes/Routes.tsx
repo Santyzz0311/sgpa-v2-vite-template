@@ -6,11 +6,11 @@ import PublicRoutesProvider from './PublicRoutesProvider'
 import ProtectedRoute from './ProtectedRoute'
 import { PRIVATE_ROUTES } from '@utils/enums'
 import PrivateRoutesProvider from './PrivateRoutesProvider'
-import { useAuthStore } from '@auth/stores/auth'
+import useAuth from '@auth/hooks/useAuth'
 
 export default function Routes() {
-  const token = useAuthStore((state) => state.token)
-
+  const { token } = useAuth()
+  
   return (
     <Router>
       <Suspense fallback={<Loading />}>
